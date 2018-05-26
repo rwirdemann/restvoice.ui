@@ -4,8 +4,14 @@
       th:include="layout :: page">
 <body>
 <div th:fragment="content">
+    <a href="/new_invoice">New...</a>
     <ul th:each="i: ${invoices}">
-        <li th:text="${i.customer}"></li>
+        <li>
+            <span th:text="${i.customer}"></span>
+            <span th:each="ops: ${i.operations}">
+                <a th:href="@{${ops.href}}"><span th:text="${ops.rel}">HHHH</span></a>
+            </span>
+        </li>
     </ul>
 </div>
 </body>

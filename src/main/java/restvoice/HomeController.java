@@ -20,6 +20,11 @@ public class HomeController {
         return "index";
     }
 
+    @GetMapping("/new_invoice")
+    public String newInvoice() {
+        return "invoice";
+    }
+
     @GetMapping("/logout")
     public String logout(HttpServletRequest request) throws ServletException {
         request.logout();
