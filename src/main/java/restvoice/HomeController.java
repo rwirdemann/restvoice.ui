@@ -14,7 +14,7 @@ public class HomeController {
     @GetMapping("/")
     public String index(Model model) {
         RestTemplate restTemplate = new RestTemplate();
-        Invoice[] response = restTemplate.getForObject("http://localhost:8190/invoices", Invoice[].class);
+        Invoice[] response = restTemplate.getForObject("http://localhost:8190/invoice", Invoice[].class);
         model.addAttribute("invoices", response);
 
         return "index";

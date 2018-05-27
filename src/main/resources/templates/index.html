@@ -8,8 +8,8 @@
     <ul th:each="i: ${invoices}">
         <li>
             <span th:text="${i.customer}"></span>
-            <span th:each="ops: ${i.operations}">
-                <a th:href="@{${ops.href}}"><span th:text="${ops.rel}">HHHH</span></a>
+            <span th:each="l: ${i.links}">
+                <a th:href="@{${l.value.href}}"><span th:text="${l.key}">HHHH</span></a>
             </span>
         </li>
     </ul>

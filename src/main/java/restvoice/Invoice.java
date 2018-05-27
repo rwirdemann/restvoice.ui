@@ -4,7 +4,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Invoice {
@@ -15,8 +17,8 @@ public class Invoice {
     @JsonProperty("customer")
     private String customer;
 
-    @JsonProperty("operations")
-    private List<Operation> operations = new ArrayList<>();
+    @JsonProperty("_links")
+    private Map<String, Link> links = new HashMap<>();
 
     public long getId() {
         return id;
@@ -34,11 +36,11 @@ public class Invoice {
         this.customer = customer;
     }
 
-    public List<Operation> getOperations() {
-        return operations;
+    public Map<String, Link> getLinks() {
+        return links;
     }
 
-    public void setOperations(List<Operation> operations) {
-        this.operations = operations;
+    public void setLinks(Map<String, Link> links) {
+        this.links = links;
     }
 }
