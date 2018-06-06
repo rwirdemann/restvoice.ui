@@ -8,9 +8,7 @@
     <ul th:each="i: ${invoices}">
         <li>
             <span th:text="${i.customer}"></span>
-            <span th:each="l: ${i.links}">
-                <a th:href="@{${l.value.href}}"><span th:text="${l.key}">HHHH</span></a>
-            </span>
+            <a th:href="@{${i.links.get('self').href}}">self</a>
         </li>
     </ul>
 </div>

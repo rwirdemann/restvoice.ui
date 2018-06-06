@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      th:include="layout :: page">
+<body>
+<div th:fragment="content">
+    <h2>New Booking</h2>
+    <form action="#" th:action="@{/book}" th:object="${booking}" method="post">
+        <p>Beschreibung: <input type="text" th:field="*{description}" autofocus="true" required="true"/></p>
+        <p>Stunden: <input type="text" th:field="*{hours}"/></p>
+        <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
+    </form>
+</div>
+</body>
+</html>
